@@ -31,26 +31,26 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlDomain = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlWorkgroup = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.chkDomain = new System.Windows.Forms.CheckBox();
+            this.chkWorkgroup = new System.Windows.Forms.CheckBox();
+            this.txtWrkUsername = new System.Windows.Forms.TextBox();
+            this.txtWrkPassword = new System.Windows.Forms.TextBox();
+            this.txtDomain = new System.Windows.Forms.TextBox();
+            this.txtDomainUsername = new System.Windows.Forms.TextBox();
+            this.txtDomainPassword = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.machineBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.machineNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.machineBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlDomain.SuspendLayout();
+            this.pnlWorkgroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.machineBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -58,10 +58,10 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.panel2);
-            this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.pnlDomain);
+            this.groupBox1.Controls.Add(this.pnlWorkgroup);
+            this.groupBox1.Controls.Add(this.chkDomain);
+            this.groupBox1.Controls.Add(this.chkWorkgroup);
             this.groupBox1.Location = new System.Drawing.Point(33, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(672, 216);
@@ -77,19 +77,21 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Scan";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // panel2
+            // pnlDomain
             // 
-            this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(369, 43);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(279, 100);
-            this.panel2.TabIndex = 3;
+            this.pnlDomain.Controls.Add(this.txtDomainPassword);
+            this.pnlDomain.Controls.Add(this.txtDomainUsername);
+            this.pnlDomain.Controls.Add(this.txtDomain);
+            this.pnlDomain.Controls.Add(this.label5);
+            this.pnlDomain.Controls.Add(this.label4);
+            this.pnlDomain.Controls.Add(this.label3);
+            this.pnlDomain.Enabled = false;
+            this.pnlDomain.Location = new System.Drawing.Point(369, 43);
+            this.pnlDomain.Name = "pnlDomain";
+            this.pnlDomain.Size = new System.Drawing.Size(279, 100);
+            this.pnlDomain.TabIndex = 3;
             // 
             // label5
             // 
@@ -118,16 +120,16 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Domain";
             // 
-            // panel1
+            // pnlWorkgroup
             // 
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(7, 43);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(279, 100);
-            this.panel1.TabIndex = 2;
+            this.pnlWorkgroup.Controls.Add(this.txtWrkPassword);
+            this.pnlWorkgroup.Controls.Add(this.txtWrkUsername);
+            this.pnlWorkgroup.Controls.Add(this.label2);
+            this.pnlWorkgroup.Controls.Add(this.label1);
+            this.pnlWorkgroup.Location = new System.Drawing.Point(7, 43);
+            this.pnlWorkgroup.Name = "pnlWorkgroup";
+            this.pnlWorkgroup.Size = new System.Drawing.Size(279, 100);
+            this.pnlWorkgroup.TabIndex = 2;
             // 
             // label2
             // 
@@ -147,62 +149,66 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Username";
             // 
-            // checkBox2
+            // chkDomain
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(369, 20);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(62, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Domain";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkDomain.AutoSize = true;
+            this.chkDomain.Location = new System.Drawing.Point(369, 20);
+            this.chkDomain.Name = "chkDomain";
+            this.chkDomain.Size = new System.Drawing.Size(62, 17);
+            this.chkDomain.TabIndex = 1;
+            this.chkDomain.Text = "Domain";
+            this.chkDomain.UseVisualStyleBackColor = true;
+            this.chkDomain.CheckedChanged += new System.EventHandler(this.chkDomain_CheckedChanged);
             // 
-            // checkBox1
+            // chkWorkgroup
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(7, 20);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(79, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Workgroup";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkWorkgroup.AutoSize = true;
+            this.chkWorkgroup.Checked = true;
+            this.chkWorkgroup.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkWorkgroup.Location = new System.Drawing.Point(7, 20);
+            this.chkWorkgroup.Name = "chkWorkgroup";
+            this.chkWorkgroup.Size = new System.Drawing.Size(79, 17);
+            this.chkWorkgroup.TabIndex = 0;
+            this.chkWorkgroup.Text = "Workgroup";
+            this.chkWorkgroup.UseVisualStyleBackColor = true;
+            this.chkWorkgroup.CheckedChanged += new System.EventHandler(this.chkWorkgroup_CheckedChanged);
             // 
-            // textBox1
+            // txtWrkUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(99, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtWrkUsername.Location = new System.Drawing.Point(99, 15);
+            this.txtWrkUsername.Name = "txtWrkUsername";
+            this.txtWrkUsername.Size = new System.Drawing.Size(177, 20);
+            this.txtWrkUsername.TabIndex = 2;
             // 
-            // textBox2
+            // txtWrkPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(99, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(177, 20);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.txtWrkPassword.Location = new System.Drawing.Point(99, 46);
+            this.txtWrkPassword.Name = "txtWrkPassword";
+            this.txtWrkPassword.Size = new System.Drawing.Size(177, 20);
+            this.txtWrkPassword.TabIndex = 3;
+            this.txtWrkPassword.UseSystemPasswordChar = true;
             // 
-            // textBox3
+            // txtDomain
             // 
-            this.textBox3.Location = new System.Drawing.Point(99, 12);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(177, 20);
-            this.textBox3.TabIndex = 3;
+            this.txtDomain.Location = new System.Drawing.Point(99, 12);
+            this.txtDomain.Name = "txtDomain";
+            this.txtDomain.Size = new System.Drawing.Size(177, 20);
+            this.txtDomain.TabIndex = 3;
             // 
-            // textBox4
+            // txtDomainUsername
             // 
-            this.textBox4.Location = new System.Drawing.Point(99, 39);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(177, 20);
-            this.textBox4.TabIndex = 4;
+            this.txtDomainUsername.Location = new System.Drawing.Point(99, 39);
+            this.txtDomainUsername.Name = "txtDomainUsername";
+            this.txtDomainUsername.Size = new System.Drawing.Size(177, 20);
+            this.txtDomainUsername.TabIndex = 4;
             // 
-            // textBox5
+            // txtDomainPassword
             // 
-            this.textBox5.Location = new System.Drawing.Point(99, 68);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(177, 20);
-            this.textBox5.TabIndex = 5;
-            this.textBox5.UseSystemPasswordChar = true;
+            this.txtDomainPassword.Location = new System.Drawing.Point(99, 68);
+            this.txtDomainPassword.Name = "txtDomainPassword";
+            this.txtDomainPassword.Size = new System.Drawing.Size(177, 20);
+            this.txtDomainPassword.TabIndex = 5;
+            this.txtDomainPassword.UseSystemPasswordChar = true;
             // 
             // dataGridView1
             // 
@@ -216,15 +222,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(672, 354);
             this.dataGridView1.TabIndex = 1;
             // 
-            // machineBindingSource
-            // 
-            this.machineBindingSource.DataSource = typeof(SysScanner.Machine);
-            // 
             // machineNameDataGridViewTextBoxColumn
             // 
             this.machineNameDataGridViewTextBoxColumn.DataPropertyName = "MachineName";
             this.machineNameDataGridViewTextBoxColumn.HeaderText = "MachineName";
             this.machineNameDataGridViewTextBoxColumn.Name = "machineNameDataGridViewTextBoxColumn";
+            // 
+            // machineBindingSource
+            // 
+            this.machineBindingSource.DataSource = typeof(SysScanner.Machine);
             // 
             // Scanner
             // 
@@ -237,10 +243,10 @@
             this.Text = "Scanner";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlDomain.ResumeLayout(false);
+            this.pnlDomain.PerformLayout();
+            this.pnlWorkgroup.ResumeLayout(false);
+            this.pnlWorkgroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.machineBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -251,20 +257,20 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlDomain;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlWorkgroup;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox chkDomain;
+        private System.Windows.Forms.CheckBox chkWorkgroup;
+        private System.Windows.Forms.TextBox txtDomainPassword;
+        private System.Windows.Forms.TextBox txtDomainUsername;
+        private System.Windows.Forms.TextBox txtDomain;
+        private System.Windows.Forms.TextBox txtWrkPassword;
+        private System.Windows.Forms.TextBox txtWrkUsername;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn machineNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource machineBindingSource;
