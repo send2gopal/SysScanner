@@ -40,7 +40,20 @@ namespace SysScanner
             }
 
             var x = Utility.VisibleComputers();
-            machineBindingSource.Add(new Machine {MachineName=Utility.GetJoinedDomain() });
+            foreach (var machine in x)
+            {
+                try
+                {
+                    dataGridView1.DataSource = HardwareInfo.GetHardwareInfo( machine, machine,txtWrkUsername.Text,txtWrkPassword.Text);
+                }
+                catch (Exception ex)
+                {
+
+                  
+                }
+                
+            }
+            //machineBindingSource.Add(new Machine {MachineName=Utility.GetJoinedDomain() });
 
 
         }

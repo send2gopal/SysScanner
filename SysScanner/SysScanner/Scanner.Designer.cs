@@ -32,27 +32,29 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.pnlDomain = new System.Windows.Forms.Panel();
+            this.txtDomainPassword = new System.Windows.Forms.TextBox();
+            this.txtDomainUsername = new System.Windows.Forms.TextBox();
+            this.txtDomain = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlWorkgroup = new System.Windows.Forms.Panel();
+            this.txtWrkPassword = new System.Windows.Forms.TextBox();
+            this.txtWrkUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.chkDomain = new System.Windows.Forms.CheckBox();
             this.chkWorkgroup = new System.Windows.Forms.CheckBox();
-            this.txtWrkUsername = new System.Windows.Forms.TextBox();
-            this.txtWrkPassword = new System.Windows.Forms.TextBox();
-            this.txtDomain = new System.Windows.Forms.TextBox();
-            this.txtDomainUsername = new System.Windows.Forms.TextBox();
-            this.txtDomainPassword = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.machineNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.machineBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.machineHardwareInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hardwareNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hardwareValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.pnlDomain.SuspendLayout();
             this.pnlWorkgroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.machineBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.machineHardwareInfoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -93,6 +95,28 @@
             this.pnlDomain.Size = new System.Drawing.Size(279, 100);
             this.pnlDomain.TabIndex = 3;
             // 
+            // txtDomainPassword
+            // 
+            this.txtDomainPassword.Location = new System.Drawing.Point(99, 68);
+            this.txtDomainPassword.Name = "txtDomainPassword";
+            this.txtDomainPassword.Size = new System.Drawing.Size(177, 20);
+            this.txtDomainPassword.TabIndex = 5;
+            this.txtDomainPassword.UseSystemPasswordChar = true;
+            // 
+            // txtDomainUsername
+            // 
+            this.txtDomainUsername.Location = new System.Drawing.Point(99, 39);
+            this.txtDomainUsername.Name = "txtDomainUsername";
+            this.txtDomainUsername.Size = new System.Drawing.Size(177, 20);
+            this.txtDomainUsername.TabIndex = 4;
+            // 
+            // txtDomain
+            // 
+            this.txtDomain.Location = new System.Drawing.Point(99, 12);
+            this.txtDomain.Name = "txtDomain";
+            this.txtDomain.Size = new System.Drawing.Size(177, 20);
+            this.txtDomain.TabIndex = 3;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -130,6 +154,21 @@
             this.pnlWorkgroup.Name = "pnlWorkgroup";
             this.pnlWorkgroup.Size = new System.Drawing.Size(279, 100);
             this.pnlWorkgroup.TabIndex = 2;
+            // 
+            // txtWrkPassword
+            // 
+            this.txtWrkPassword.Location = new System.Drawing.Point(99, 46);
+            this.txtWrkPassword.Name = "txtWrkPassword";
+            this.txtWrkPassword.Size = new System.Drawing.Size(177, 20);
+            this.txtWrkPassword.TabIndex = 3;
+            this.txtWrkPassword.UseSystemPasswordChar = true;
+            // 
+            // txtWrkUsername
+            // 
+            this.txtWrkUsername.Location = new System.Drawing.Point(99, 15);
+            this.txtWrkUsername.Name = "txtWrkUsername";
+            this.txtWrkUsername.Size = new System.Drawing.Size(177, 20);
+            this.txtWrkUsername.TabIndex = 2;
             // 
             // label2
             // 
@@ -173,64 +212,42 @@
             this.chkWorkgroup.UseVisualStyleBackColor = true;
             this.chkWorkgroup.CheckedChanged += new System.EventHandler(this.chkWorkgroup_CheckedChanged);
             // 
-            // txtWrkUsername
-            // 
-            this.txtWrkUsername.Location = new System.Drawing.Point(99, 15);
-            this.txtWrkUsername.Name = "txtWrkUsername";
-            this.txtWrkUsername.Size = new System.Drawing.Size(177, 20);
-            this.txtWrkUsername.TabIndex = 2;
-            // 
-            // txtWrkPassword
-            // 
-            this.txtWrkPassword.Location = new System.Drawing.Point(99, 46);
-            this.txtWrkPassword.Name = "txtWrkPassword";
-            this.txtWrkPassword.Size = new System.Drawing.Size(177, 20);
-            this.txtWrkPassword.TabIndex = 3;
-            this.txtWrkPassword.UseSystemPasswordChar = true;
-            // 
-            // txtDomain
-            // 
-            this.txtDomain.Location = new System.Drawing.Point(99, 12);
-            this.txtDomain.Name = "txtDomain";
-            this.txtDomain.Size = new System.Drawing.Size(177, 20);
-            this.txtDomain.TabIndex = 3;
-            // 
-            // txtDomainUsername
-            // 
-            this.txtDomainUsername.Location = new System.Drawing.Point(99, 39);
-            this.txtDomainUsername.Name = "txtDomainUsername";
-            this.txtDomainUsername.Size = new System.Drawing.Size(177, 20);
-            this.txtDomainUsername.TabIndex = 4;
-            // 
-            // txtDomainPassword
-            // 
-            this.txtDomainPassword.Location = new System.Drawing.Point(99, 68);
-            this.txtDomainPassword.Name = "txtDomainPassword";
-            this.txtDomainPassword.Size = new System.Drawing.Size(177, 20);
-            this.txtDomainPassword.TabIndex = 5;
-            this.txtDomainPassword.UseSystemPasswordChar = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.machineNameDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.machineBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 254);
+            this.dataGridViewTextBoxColumn1,
+            this.hardwareNameDataGridViewTextBoxColumn,
+            this.hardwareValueDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.machineHardwareInfoBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(24, 235);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(672, 354);
             this.dataGridView1.TabIndex = 1;
             // 
-            // machineNameDataGridViewTextBoxColumn
+            // machineHardwareInfoBindingSource
             // 
-            this.machineNameDataGridViewTextBoxColumn.DataPropertyName = "MachineName";
-            this.machineNameDataGridViewTextBoxColumn.HeaderText = "MachineName";
-            this.machineNameDataGridViewTextBoxColumn.Name = "machineNameDataGridViewTextBoxColumn";
+            this.machineHardwareInfoBindingSource.DataSource = typeof(SysScanner.MachineHardwareInfo);
             // 
-            // machineBindingSource
+            // dataGridViewTextBoxColumn1
             // 
-            this.machineBindingSource.DataSource = typeof(SysScanner.Machine);
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "MachineName";
+            this.dataGridViewTextBoxColumn1.HeaderText = "MachineName";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // hardwareNameDataGridViewTextBoxColumn
+            // 
+            this.hardwareNameDataGridViewTextBoxColumn.DataPropertyName = "HardwareName";
+            this.hardwareNameDataGridViewTextBoxColumn.HeaderText = "HardwareName";
+            this.hardwareNameDataGridViewTextBoxColumn.Name = "hardwareNameDataGridViewTextBoxColumn";
+            // 
+            // hardwareValueDataGridViewTextBoxColumn
+            // 
+            this.hardwareValueDataGridViewTextBoxColumn.DataPropertyName = "HardwareValue";
+            this.hardwareValueDataGridViewTextBoxColumn.HeaderText = "HardwareValue";
+            this.hardwareValueDataGridViewTextBoxColumn.Name = "hardwareValueDataGridViewTextBoxColumn";
+            this.hardwareValueDataGridViewTextBoxColumn.Width = 600;
             // 
             // Scanner
             // 
@@ -248,7 +265,7 @@
             this.pnlWorkgroup.ResumeLayout(false);
             this.pnlWorkgroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.machineBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.machineHardwareInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -273,6 +290,10 @@
         private System.Windows.Forms.TextBox txtWrkUsername;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn machineNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource machineBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hardwareDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hardwareNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hardwareValueDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource machineHardwareInfoBindingSource;
     }
 }

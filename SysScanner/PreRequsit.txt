@@ -1,0 +1,6 @@
+Running System
+Set-Item -Path WSMan:\localhost\Client\TrustedHosts -Value "*"
+ Enable-PSRemoting -SkipNetworkProfileCheck -Force
+
+All Systems
+ Enable-PSRemoting -SkipNetworkProfileCheck -Force

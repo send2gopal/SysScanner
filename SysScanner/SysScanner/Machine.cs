@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace SysScanner
 {
-    public class Machine
+    public class MachineHardwareInfo
     {
         public string MachineName { get; set; }
+        public string HardwareName { get; set; }
+        public string HardwareValue { get; set; }
     }
 }
