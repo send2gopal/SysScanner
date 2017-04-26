@@ -34,8 +34,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Management.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Windows\WinSxS\msil_microsoft.management.infrastructure_31bf3856ad364e35_10.0.14393.0_none_60e082332385d3cd\Microsoft.Management.Infrastructure.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Management.Infrastructure.4.0.0\lib\Microsoft.Management.Infrastructure.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -87,6 +87,7 @@
     <EmbeddedResource Include="Scanner.resx">
       <DependentUpon>Scanner.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\MachineHardwareInfo.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
